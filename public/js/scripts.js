@@ -10,6 +10,7 @@
   $('a.js-scroll-trigger[href*="#"]:not([href="#"])').click(function () {
     if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') && location.hostname == this.hostname) {
       var target = $(this.hash);
+      console.log(target)
       target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
       if (target.length) {
         $('html, body').animate({
@@ -68,8 +69,8 @@
 })(jQuery); // End of use strict
 
 
-const relativeImgPath = ["assets\\img\\portfolio\\cabin.png", "assets\\img\\portfolio\\cake.png", "assets\\img\\portfolio\\circus.png", "assets\\img\\portfolio\\game.png", "assets\\img\\portfolio\\safe.png", "assets\\img\\portfolio\\submarine.png", "assets\\img\\avataaars.svg"]
-
+// const relativeImgPathV2 = ["assets\\img\\portfolio\\cabin.png", "assets\\img\\portfolio\\cake.png", "assets\\img\\portfolio\\circus.png", "assets\\img\\portfolio\\game.png", "assets\\img\\portfolio\\safe.png", "assets\\img\\portfolio\\submarine.png", "assets\\img\\avataaars.svg"]
+const relativeImgPath = ["assets\\img\\portfolio\\IMG_2854~photo-full.jpg", "assets\\img\\portfolio\\0E2A00D6-1172-40E3-9109-78B71F0A4350~photo.JPG", "assets\\img\\portfolio\\C3F3532A-E9BD-4854-B0F1-24EC71672A67~photo.JPG"]
 const mastHeadMain = document.getElementById("mastHeadMain");
 
 for (let i = 0; i < relativeImgPath.length; i++) {
@@ -79,15 +80,33 @@ for (let i = 0; i < relativeImgPath.length; i++) {
 
   }, i * 3000);
 
-  //mastHeadMain.src = relativeImgPath[i];
 }
-//
-// todo
-//
-// for back  transiotio nunderstand code below and customaize
-// .slide {
-//   -webkit-transition: opacity 2000ms ease-in-out;
-//      -moz-transition: opacity 2000ms ease-in-out;
-//        -o-transition: opacity 2000ms ease-in-out;
-//           transition: opacity 2000ms ease-in-out;
-//  }
+
+
+// let vueApp = document.getElementById("insideCurtain");
+let checkBoxThatOpensCurtains = document.getElementById("checkBoxThatOpensCurtains");
+
+function openThatBitch() {
+    checkBoxThatOpensCurtains.checked = !checkBoxThatOpensCurtains.checked;
+  }
+  
+  
+  // fadeOut(vueApp)
+  
+  openThatBitch()
+  
+  // setTimeout(() => { fadeIn(vueApp) }, 2000)
+  
+  
+  
+  
+  
+// function fadeIn(el) {
+//   el.classList.add('show');
+//   el.classList.remove('hide');
+// }
+
+// function fadeOut(el) {
+//   el.classList.add('hide');
+//   el.classList.remove('show');
+// }

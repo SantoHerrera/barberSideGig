@@ -42,7 +42,7 @@
 }
 
 html {
-    font-family: sans-serif;
+    font-family: "Times-New-Roman";
     line-height: 1.15;
     -webkit-text-size-adjust: 100%;
     -webkit-tap-highlight-color: rgba(0, 0, 0, 0)
@@ -5952,7 +5952,7 @@ a.close.disabled {
 }
 
 .bg-primary {
-    background-color: #1abc9c!important
+    background-color: #ffffff!important
 }
 
 a.bg-primary:focus, a.bg-primary:hover, button.bg-primary:focus, button.bg-primary:hover {
@@ -8730,6 +8730,10 @@ a.bg-dark:focus, a.bg-dark:hover, button.bg-dark:focus, button.bg-dark:hover {
     color: #fff!important
 }
 
+.text-brown {
+    color: #533f03
+}
+
 .text-primary {
     color: #1abc9c!important
 }
@@ -8931,9 +8935,9 @@ a.text-dark:focus, a.text-dark:hover {
     width: 100%;
     max-width: 7rem;
     height: .25rem;
-    background-color: #2c3e50;
+    background-color: #533f03;
     border-radius: 1rem;
-    border-color: #2c3e50!important
+    border-color: #533f03 !important
 }
 
 .divider-custom .divider-custom-line:first-child {
@@ -8945,16 +8949,16 @@ a.text-dark:focus, a.text-dark:hover {
 }
 
 .divider-custom .divider-custom-icon {
-    color: #2c3e50!important;
+    color: #533f03;
     font-size: 2rem
 }
 
 .divider-custom.divider-light .divider-custom-line {
-    background-color: #fff
+    background-color: #533f03
 }
 
 .divider-custom.divider-light .divider-custom-icon {
-    color: #fff!important
+    color: #533f03 !important;
 }
 
 .btn-xl {
@@ -9227,4 +9231,80 @@ form .row:first-child .floating-label-form-group {
 
 .btn-social {
     margin-bottom: .5rem
+}
+
+/*curtains and fade in animations*/
+
+.curtain {
+    margin: 0 auto;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.curtain__wrapper {
+    width: 100%;
+    height: 100%;
+}
+
+.curtain__wrapper input[type=checkbox] {
+    position: absolute;
+    width: 0%;
+    height: 0%;
+    opacity: 0;
+}
+
+.curtain__wrapper input[type=checkbox]:checked~div.curtain__panel--left {
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+}
+
+.curtain__wrapper input[type=checkbox]:checked~div.curtain__panel--right {
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+}
+
+.curtain__panel {
+    display: -webkit-box;
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    background: rgb(21, 112, 21);
+    float: left;
+    position: relative;
+    width: 50%;
+    height: 100vh;
+    -webkit-transition: all 2s ease-out;
+    transition: all 2s ease-out;
+    z-index: 2;
+}
+
+.curtain__panel--left {
+    -webkit-box-pack: end;
+    justify-content: flex-end;
+    -webkit-transform: translateX(-100%);
+    transform: translateX(-100%);
+}
+
+.curtain__panel--right {
+    -webkit-box-pack: start;
+    justify-content: flex-start;
+    -webkit-transform: translateX(100%);
+    transform: translateX(100%);
+}
+
+.curtain__content {
+    padding: 1rem 0;
+    position: absolute;
+    width: 100%;
+}
+
+.show {
+    opacity: 1;
+    transition: opacity 4000ms;
+}
+
+.hide {
+    opacity: 0;
+    transition: opacity 1000ms;
 }
