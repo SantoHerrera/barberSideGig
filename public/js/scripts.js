@@ -69,44 +69,71 @@
 })(jQuery); // End of use strict
 
 
-// const relativeImgPathV2 = ["assets\\img\\portfolio\\cabin.png", "assets\\img\\portfolio\\cake.png", "assets\\img\\portfolio\\circus.png", "assets\\img\\portfolio\\game.png", "assets\\img\\portfolio\\safe.png", "assets\\img\\portfolio\\submarine.png", "assets\\img\\avataaars.svg"]
 const relativeImgPath = ["assets\\img\\portfolio\\IMG_2854~photo-full.jpg", "assets\\img\\portfolio\\0E2A00D6-1172-40E3-9109-78B71F0A4350~photo.JPG", "assets\\img\\portfolio\\C3F3532A-E9BD-4854-B0F1-24EC71672A67~photo.JPG"]
 const mastHeadMain = document.getElementById("mastHeadMain");
 
-for (let i = 0; i < relativeImgPath.length; i++) {
-  setTimeout(() => {
-    console.log(i);
-    mastHeadMain.src = relativeImgPath[i]
+//function startSlideShow
+function startSlideShow() {
+  for (let i = 0; i < relativeImgPath.length; i++) {
+    setTimeout(() => {
+      mastHeadMain.src = relativeImgPath[i]
 
-  }, i * 3000);
-
+    }, i * 3000);
+  }
 }
 
 
-// let vueApp = document.getElementById("insideCurtain");
+
+mastHeadMain.src = relativeImgPath[0]
+
+
+
+let vueApp = document.getElementById("insideCurtain");
 let checkBoxThatOpensCurtains = document.getElementById("checkBoxThatOpensCurtains");
 
 function openThatBitch() {
-    checkBoxThatOpensCurtains.checked = !checkBoxThatOpensCurtains.checked;
+  checkBoxThatOpensCurtains.checked = !checkBoxThatOpensCurtains.checked;
+}
+
+
+// fadeOut(vueApp)
+
+openThatBitch()
+
+
+let allElementsWithHideClass = document.getElementsByClassName("hide")
+
+function showAllElements() {
+
+  for (let i = 0; i < allElementsWithHideClass.length; i++) {
+    fadeIn(allElementsWithHideClass[i])
   }
-  
-  
-  // fadeOut(vueApp)
-  
-  openThatBitch()
-  
-  // setTimeout(() => { fadeIn(vueApp) }, 2000)
-  
-  
-  
-  
-  
-// function fadeIn(el) {
-//   el.classList.add('show');
-//   el.classList.remove('hide');
-// }
+}
+
+let wordsUnderSlideWhoe = document.getElementById("wordsUnderSlideShow")
+
+
+
+setTimeout(() => { openThatBitch() }, 4000)
+
+setTimeout(() => { openThatBitch(), showAllElements(), startSlideShow() }, 6000)
+
+
+
+
+
+
+function fadeIn(el) {
+  el.classList.remove('hide');
+  el.classList.add('show');
+}
 
 // function fadeOut(el) {
 //   el.classList.add('hide');
 //   el.classList.remove('show');
 // }
+
+
+//r\tKR OFF GSRYTHEBARBER
+
+//MAKE GREEN DAarker
