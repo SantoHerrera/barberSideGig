@@ -69,6 +69,34 @@
 })(jQuery); // End of use strict
 
 
+
+// const bodyScrollLock = require('body-scroll-lock');
+// const disableBodyScroll = bodyScrollLock.disableBodyScroll;
+// const enableBodyScroll = bodyScrollLock.enableBodyScroll;
+
+
+// let body = document.getElementsByTagName("body")
+
+// disableBodyScroll(body)
+
+
+function disableScroll() { 
+  // Get the current page scroll position 
+  scrollTop = window.pageYOffset || document.documentElement.scrollTop; 
+  scrollLeft = window.pageXOffset || document.documentElement.scrollLeft, 
+
+      // if any scroll is attempted, set this to the previous value 
+      window.onscroll = function() { 
+          window.scrollTo(scrollLeft, scrollTop); 
+      }; 
+} 
+function enableScroll() { 
+  window.onscroll = function() {}; 
+} 
+
+disableScroll()
+
+
 const relativeImgPath = ["assets\\img\\portfolio\\IMG_2854~photo-full.jpg", "assets\\img\\portfolio\\0E2A00D6-1172-40E3-9109-78B71F0A4350~photo.JPG", "assets\\img\\portfolio\\C3F3532A-E9BD-4854-B0F1-24EC71672A67~photo.JPG"]
 const mastHeadMain = document.getElementById("mastHeadMain");
 
@@ -116,7 +144,7 @@ let wordsUnderSlideWhoe = document.getElementById("wordsUnderSlideShow")
 
 setTimeout(() => { openThatBitch() }, 4000)
 
-setTimeout(() => { openThatBitch(), showAllElements(), startSlideShow() }, 6000)
+setTimeout(() => { openThatBitch(), showAllElements(), startSlideShow(), enableScroll() }, 6000)
 
 
 
